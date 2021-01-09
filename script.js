@@ -33,3 +33,14 @@ function addCol() {
 
   amountCol++;
 }
+
+function removeRow() {
+  //selects the grid
+  let mainGrid = document.getElementById("mainGrid");
+
+  //remove row
+  mainGrid.deleteRow(amountRow - 1);
+
+  //decrement row count
+  amountRow--;
+}
