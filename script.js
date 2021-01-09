@@ -17,3 +17,19 @@ function addRow() {
   mainGrid.appendChild(newRow);
   amountRow++;
 }
+
+function addCol() {
+  //selects the grid
+  let mainGrid = document.getElementById("mainGrid");
+
+  //add a cell to each row, which creates a new column
+  let row = document.querySelectorAll("tr");
+  row.forEach((element) => {
+    //creates new cell
+    let cell = document.createElement("td");
+
+    element.appendChild(cell);
+  });
+
+  amountCol++;
+}
