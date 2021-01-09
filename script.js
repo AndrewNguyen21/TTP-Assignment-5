@@ -44,3 +44,16 @@ function removeRow() {
   //decrement row count
   amountRow--;
 }
+
+function removeCol() {
+  //selects the grid
+  let mainGrid = document.getElementById("mainGrid");
+
+  //delete a cell from each row, which deletes column
+  let row = document.querySelectorAll("tr");
+  row.forEach((element) => {
+    element.removeChild(element.lastChild);
+  });
+
+  amountCol--;
+}
