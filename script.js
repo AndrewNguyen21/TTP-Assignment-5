@@ -79,13 +79,13 @@ let currentColor = document.getElementById("color").value;
 
 //Setting background of grid
 function settingColor() {
-  this.style.backgroundColor = CurrentColor;
+  this.style.backgroundColor = currentColor;
   this.classList.remove("no-color");
 }
 
 //Updating color option when user changes it
 function setColor(color) {
-  CurrentColor = color;
+  currentColor = color;
 }
 
 function gridInteraction(cell) {
@@ -94,4 +94,35 @@ function gridInteraction(cell) {
 
   //if not color selected add no-color class by default
   cell.classList.add("no-color");
+}
+
+//change all cells to selected color
+function changeAllCells() {
+  //saving all grid locations
+  let cells = document.getElementsByTagName("td");
+  let allCells = [...cells];
+
+  //setting color for uncolored squares
+  allCells.forEach((cell) => {
+    cell.style.backgroundColor = currentColor;
+    cell.classList.remove("no-color");
+  });
+}
+
+//change only modified cells to selected color
+function changeDefaultCells() {
+  //saving all grid locations
+  let cells = document.getElementsByTagName("td");
+  let allCells = [...cells];
+
+  //filter out colored grids
+  let noColor = allCells.filter((cell) => {
+    return cell.classList.contains("no-color");
+  });
+
+  //setting color for uncolored squares
+  noColor.forEach((cell) => {
+    cell.style.backgroundColor = currentColor;
+    cell.classList.remove("no-color");
+  });
 }
