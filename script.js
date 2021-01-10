@@ -1,5 +1,5 @@
 //initial grid
-let amountRow = 1;
+let amountRow = 2;
 let amountCol = 2;
 
 function addRow() {
