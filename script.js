@@ -1,6 +1,7 @@
 //initial grid
 let amountRow = 1;
 let amountCol = 1;
+let hovering = false;
 
 //Adding functionality to starting cell
 let startCell = document.getElementsByTagName("td");
@@ -94,6 +95,24 @@ function gridInteraction(cell) {
 
   //if not color selected add no-color class by default
   cell.classList.add("no-color");
+
+  //Adding hover functionality
+  cell.addEventListener("mousedown", (element) => {
+    hovering = true;
+  });
+
+  cell.addEventListener("mousemove", (element) => {
+    if (hovering) {
+      cell.style.backgroundColor = currentColor;
+      cell.classList.remove("no-color");
+    }
+  });
+
+  cell.addEventListener("mouseup", (element) => {
+    if (hovering) {
+      hovering = false;
+    }
+  });
 }
 
 //change all cells to selected color
