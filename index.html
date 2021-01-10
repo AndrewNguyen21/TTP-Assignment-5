@@ -13,23 +13,18 @@
     <button onclick="return removeRow()">Remove row</button>
     <button onclick="return removeCol()">Remove col</button>
     <div>
-      <label for="cars">Choose a color:</label>
+      <label for="colorMenu">Choose a color:</label>
 
-      <select name="colors" id="colors">
-        <option value="maroon">Red</option>
-        <option value="skyblue">Blue</option>
-        <option value="olive">Green</option>
-        <option value="goldenrod">Yellow</option>
-        <option value="purple">Purple</option>
+      <select name="color" id="color" onchange="setColor(this.value)">
+        <option value="#800000">Red</option>
+        <option value="#87ceeb">Blue</option>
+        <option value="#999900">Green</option>
+        <option value="#ffd500">Yellow</option>
+        <option value="#ad0aaf">Purple</option>
       </select>
     </div>
     <table id="mainGrid">
       <tr>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td></td>
         <td></td>
       </tr>
     </table>
