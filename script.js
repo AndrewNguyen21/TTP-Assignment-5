@@ -126,3 +126,16 @@ function changeDefaultCells() {
     cell.classList.remove("no-color");
   });
 }
+
+//reset cells to default color
+function resetCells() {
+  //saving all grid locations
+  let cells = document.getElementsByTagName("td");
+  let allCells = [...cells];
+
+  //setting color for uncolored squares
+  allCells.forEach((cell) => {
+    cell.style.backgroundColor = "grey";
+    cell.classList.add("no-color");
+  });
+}
